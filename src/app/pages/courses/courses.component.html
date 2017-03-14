@@ -1,0 +1,14 @@
+<span>{{header}}</span>
+<div class="courses-list" *ngFor='let course of courses'>
+	<course-item [course]="course"></course-item>
+	<!-- <div class="course-item">
+			<h1>{{course.title}}</h1>
+			<span>{{course.time}}</span>
+			<span>{{course.date}}</span>
+			<div class="item-description">
+	{{course.description}}
+			</div>
+			<button type="button" name="button" (click)="editCourse">Edit</button>
+			<button type="button" name="button" (click)="deleteCourse">Delete</button>
+	</div> -->
+</div>
