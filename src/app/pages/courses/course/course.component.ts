@@ -1,11 +1,11 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Course } from './course';
 
 @Component({
 	selector: 'course-item',
 	templateUrl: './course.component.html',
-	styles: [require('./course.component.css')],
+	styleUrls: ['./course.component.scss'],
 	providers: []
 })
 export class CourseComponent {

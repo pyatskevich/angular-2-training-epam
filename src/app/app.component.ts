@@ -15,12 +15,12 @@ import { AppState } from './app.service';
 @Component({
 	selector: 'app',
 	encapsulation: ViewEncapsulation.None,
-	styles: [
-		require('./styles/vendors.scss'),
-		require('./styles/index.scss'),
-		require('./app.styles.scss')
-	],
-	template: require('./app.template.html')
+	styleUrls: [
+		'./styles/vendors.scss',
+		'./styles/index.scss',
+		'./app.component.scss'
+	]
+	templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
 

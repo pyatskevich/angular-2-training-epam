@@ -1,11 +1,10 @@
-import { Component, ViewEncapsulation} from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
 	selector: 'courses-container',
 	templateUrl: './courses.component.html',
-	styles: [require('./courses.component.css')],
-	providers: [],
-	encapsulation: ViewEncapsulation.None
+	styleUrls: ['./courses.component.scss'],
+	providers: []
 })
 export class CoursesComponent {
 	constructor() {
