@@ -29,12 +29,12 @@ import { HeaderModule, FooterModule } from './core/components';
 import { CoursesModule } from './pages/courses';
 
 // Services
-import { CourseService } from './core/services/courseService';
+//import { CourseService } from './core/services/courseService';
 
 
 // Application wide providers
 const APP_PROVIDERS = [
-	CourseService
+	//CourseService
 ];
 
 /**
