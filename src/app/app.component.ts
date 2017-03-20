@@ -19,7 +19,7 @@ import { AppState } from './app.service';
 		'./styles/vendors.scss',
 		'./styles/index.scss',
 		'./app.component.scss'
-	]
+	],
 	templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
