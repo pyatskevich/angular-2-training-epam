@@ -26,13 +26,17 @@ export class CoursesComponent implements OnInit {
 		this.courseService.addCourse();
 	}
 
-	getCourse(): Course {
-		this.courseService.getCourse();
+	getCourse(): void {
+		this.courseService.getCourse('test');
 	}
 
-	updateCourse(): Course {
+	/*updateCourse(): Course {
 		this.courseService.updateCourse();
 	}
+
+	deleteCourse(): void {
+		this.courseService.deleteCourse();
+	}*/
 
 
 

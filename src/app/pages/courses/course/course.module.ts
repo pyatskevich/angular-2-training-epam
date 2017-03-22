@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
 	declarations: [CourseComponent],
-	imports: [],
+	imports: [CommonModule],
 	exports: [CourseComponent]
 })
 export class CourseModule {

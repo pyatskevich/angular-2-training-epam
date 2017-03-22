@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-
-
 @Component({
 	selector: 'course-item',
 	templateUrl: './course.component.html',
@@ -12,5 +10,14 @@ export class CourseComponent {
 	constructor() {
 
 	}
-	@Input()  course;
+	@Input() course;
+	@Input() courseService;
+
+	editCourse(course) {
+		this.courseService.updateCourse(course);
+	}
+
+	deleteCourse(course) {
+		this.courseService.deleteCourse(course);
+	}
 }

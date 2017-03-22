@@ -5,20 +5,25 @@ import { COURSES } from './mock-courses';
 
 @Injectable()
 export class CourseService {
+	course: Course[];
+	constructor() {
+		this.course = COURSES;
+	}
     getCourses(): Course[]{
-  		return COURSES;
+  		return this.course;
 	}
-	addCourse(): {
+	addCourse(): void{
 
 	}
-	getCourse(id): Course{
-		 return _.find(COURSES, {id});
+	getCourse(title: String): Course{
+		 return _.find(this.course, {title});
 	}
-	updareCourse(): Course {
-
+	updateCourse(course): void {
+console.log(1111);
 	}
 
-	deleteCourse(): void {
-
+	deleteCourse(course): void {
+			this.course = _.filter(this.course, currentCourse => currentCourse.id !== course.id)
+			console.log(this.course);
 	}
 }

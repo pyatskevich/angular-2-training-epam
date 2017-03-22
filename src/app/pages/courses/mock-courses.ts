@@ -28,5 +28,4 @@ export const COURSES: Course[] = [
 		description: 'Some description',
 		id: 4
 	}
-
-]
+];

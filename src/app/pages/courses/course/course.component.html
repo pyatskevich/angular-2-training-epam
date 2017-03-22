@@ -1,4 +1,4 @@
-<div class="media">
+<div class="media" *ngIf="course">
 
   <div class="media-body">
     <h4 class="media-heading">{{course.title}}</h4>
@@ -10,8 +10,9 @@
   </div>
   <div class="media-right">
 	  <div class="btn-group" role="group" aria-label="...">
-  	  <button type="button" class="btn btn-default" (click)="editCourse">Edit</button>
-  	  <button type="button" class="btn btn-default" (click)="deleteCourse">Delete</button>
+
+	  <button type="button" class="btn btn-default" (click)="editCourse(course)" id="{{course.id}}">Edit</button>
+  	  <button type="button" class="btn btn-default" (click)="deleteCourse(course)" id="{{course.id}}">Delete</button>
 
   	</div>
   </div>
