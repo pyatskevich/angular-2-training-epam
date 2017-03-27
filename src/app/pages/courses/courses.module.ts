@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CoursesComponent } from './courses.component';
 import { CommonModule } from '@angular/common';
 import { CourseModule } from './course/course.module';
+import { AddModule } from './add/add.module';
 import { SearchModule } from './search';
 
 @NgModule({
@@ -9,7 +10,8 @@ import { SearchModule } from './search';
 	imports: [
 		CommonModule,
 		CourseModule,
-		SearchModule
+		SearchModule,
+		AddModule
 	],
 	exports: [CoursesComponent]
 })

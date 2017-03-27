@@ -5,25 +5,31 @@ import { COURSES } from './mock-courses';
 
 @Injectable()
 export class CourseService {
-	course: Course[];
+	courses: Course[];
 	constructor() {
-		this.course = COURSES;
+		this.courses = COURSES;
 	}
-    getCourses(): Course[]{
-  		return this.course;
+    getCourses(): Promise<Course[]> {
+		console.log('getCourses');
+		return Promise.resolve(this.courses);
 	}
-	addCourse(): void{
-
+	addCourse(course): Promise<Course[]> {
+		course.time = '1h30m';
+		course.date = Date.now();
+		course.id = this.courses.length + 1;
+		this.courses.push(course);
+		return Promise.resolve(this.courses);
 	}
-	getCourse(title: String): Course{
-		 return _.find(this.course, {title});
+	getCourse(title: String): Promise<Course> {
+		console.log('addCourse');
+		return Promise.resolve(_.find(this.courses, {title}));
 	}
 	updateCourse(course): void {
-console.log(1111);
+		console.log('updateCourse');
 	}
 
-	deleteCourse(course): void {
-			this.course = _.filter(this.course, currentCourse => currentCourse.id !== course.id)
-			console.log(this.course);
+	deleteCourse(course): Promise<Course[]> {
+		this.courses = _.filter(this.courses, currentCourse => currentCourse.id !== course.id);
+		return Promise.resolve(this.courses);
 	}
 }

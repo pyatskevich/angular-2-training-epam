@@ -14,29 +14,31 @@ export class CoursesComponent implements OnInit {
 	}
 	header = 'Courses';
 	courses;
+
 	getCourses():void {
-		this.courses = this.courseService.getCourses();
+		this.courseService.getCourses().then(courses => this.courses = courses);
 	}
 
 	ngOnInit(): void {
 		this.getCourses();
 	}
 
-	addCourse():void {
-		this.courseService.addCourse();
+	addCourse(course):void {
+		console.log('course', course);
+		this.courseService.addCourse(course).then(courses => this.courses = courses);
 	}
 
-	getCourse(): void {
-		this.courseService.getCourse('test');
+	getCourse(title): void {
+		this.courseService.getCourse(title).then(courses => this.courses = courses);
 	}
 
 	/*updateCourse(): Course {
 		this.courseService.updateCourse();
-	}
-
-	deleteCourse(): void {
-		this.courseService.deleteCourse();
 	}*/
+
+	removeItem(course): void {
+		this.courseService.deleteCourse(course).then(courses => this.courses = courses);
+	}
 
 
 

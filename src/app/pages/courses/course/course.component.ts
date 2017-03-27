@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
 	selector: 'course-item',
@@ -12,12 +12,15 @@ export class CourseComponent {
 	}
 	@Input() course;
 	@Input() courseService;
+	@Output() done = new EventEmitter();
 
 	editCourse(course) {
 		this.courseService.updateCourse(course);
 	}
 
-	deleteCourse(course) {
-		this.courseService.deleteCourse(course);
+	deleteCourse() {
+		if (confirm("Do you really want to delete this course? ")) {
+		  this.done.emit(this.course);
+		}
 	}
 }

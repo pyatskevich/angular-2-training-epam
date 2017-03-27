@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Search } from './search';
 
 @Component({
 	selector: 'search',
@@ -9,8 +8,12 @@ import { Search } from './search';
 	providers: []
 })
 export class SearchComponent {
+	@Output() done = new EventEmitter();
 	constructor() {
 
+	}
+	search(title): void {
+		this.done.emit(title);
 	}
 
 }

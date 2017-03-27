@@ -1,6 +1,6 @@
 <span>{{header}}</span>
-<search></search>
+<search (done)="search($event)"></search>
+<add-course (done)="addCourse($event)"></add-course>
 <div class="courses-list" *ngFor="let course of courses">
-	<course-item [course]="course" [courseService]="courseService"></course-item>
-
+	<course-item [course]="course" (done)="removeItem($event)"></course-item>
 </div>

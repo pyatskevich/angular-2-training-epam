@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
 	NgModule,
-	ApplicationRef
+	ApplicationRef,
+	CUSTOM_ELEMENTS_SCHEMA
 } from '@angular/core';
 import {
 	removeNgStyles,
@@ -27,6 +28,9 @@ import { HeaderModule, FooterModule } from './core/components';
 
 // Pages
 import { CoursesModule } from './pages/courses';
+import { LoginModule } from './pages/login';
+import { AddModule } from './pages/courses/add';
+import {MaterialModule} from '@angular/material';
 
 // Services
 // import { CourseService } from './core/services/courseService';
@@ -51,12 +55,16 @@ const APP_PROVIDERS = [
 		RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
 		HeaderModule,
 		FooterModule,
-		CoursesModule
+		CoursesModule,
+		MaterialModule,
+		LoginModule,
+		AddModule
 	],
 	providers: [ // expose our Services and Providers into Angular's dependency injection
 		ENV_PROVIDERS,
 		APP_PROVIDERS
-	]
+	],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
 
