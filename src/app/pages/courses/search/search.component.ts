@@ -13,7 +13,7 @@ export class SearchComponent {
 
 	}
 	search(title): void {
-		this.done.emit(title);
+		this.done.emit();
 	}
 
 }

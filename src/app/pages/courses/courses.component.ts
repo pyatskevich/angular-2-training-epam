@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ChangeDetectionStrategy } from '@angular/core';
 import { CourseService } from './course.service';
 
 @Component({
 	selector: 'courses-container',
 	templateUrl: './courses.component.html',
 	styleUrls: ['./courses.component.css'],
-	providers: [CourseService]
+	providers: [CourseService],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CoursesComponent implements OnInit {
 	constructor(private courseService:CourseService) {
@@ -24,8 +25,10 @@ export class CoursesComponent implements OnInit {
 	}
 
 	addCourse(course):void {
-		console.log('course', course);
-		this.courseService.addCourse(course).then(courses => this.courses = courses);
+		if (course.title && course.description) {
+			this.courseService.addCourse(course).then(courses => this.courses = courses);
+		}
+
 	}
 
 	getCourse(title): void {
