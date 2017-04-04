@@ -14,10 +14,15 @@ export class CoursesComponent implements OnInit {
 
 	}
 	header = 'Courses';
+	length = 0;
 	courses;
 
 	getCourses():void {
-		this.courseService.getCourses().then(courses => this.courses = courses);
+		this.courseService.getCourses().then(courses => {
+			this.courses = courses;
+			this.length = this.courses.length;
+			console.log(this.length);
+		});
 	}
 
 	ngOnInit(): void {
@@ -26,7 +31,10 @@ export class CoursesComponent implements OnInit {
 
 	addCourse(course):void {
 		if (course.title && course.description) {
-			this.courseService.addCourse(course).then(courses => this.courses = courses);
+			this.courseService.addCourse(course).then(courses => {
+				this.courses = courses;
+				this.length = this.courses.length;
+			});
 		}
 
 	}
@@ -40,7 +48,10 @@ export class CoursesComponent implements OnInit {
 	}*/
 
 	removeItem(course): void {
-		this.courseService.deleteCourse(course).then(courses => this.courses = courses);
+		this.courseService.deleteCourse(course).then(courses => {
+			this.courses = courses
+			this.length = this.courses.length;
+		});
 	}
 
 

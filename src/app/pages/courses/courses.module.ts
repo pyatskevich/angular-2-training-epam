@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { CourseModule } from './course/course.module';
 import { AddModule } from './add/add.module';
 import { SearchModule } from './search';
+import { OrderByPipe } from './orderby.pipe';
 
 @NgModule({
-	declarations: [CoursesComponent],
+	declarations: [CoursesComponent, OrderByPipe],
 	imports: [
 		CommonModule,
 		CourseModule,

@@ -4,4 +4,5 @@ export class Course {
   time: String;
   description: String;
   id: Number;
+  topRated: Boolean;
 }

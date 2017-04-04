@@ -1,10 +1,10 @@
-<div class="media" *ngIf="course">
+<div class="media" [myBorder]="course.date" [ngClass]="{'yellow': course.topRated}">
 
   <div class="media-body">
-    <h4 class="media-heading">{{course.title}}</h4>
-	<span>{{course.time}}</span>
-	<span>{{course.date}}</span>
-
+    <h4 class="media-heading">{{course.title | uppercase}}</h4>
+	<span>{{course.time | courseDuration}}</span>
+	<span>{{course.date | date: 'dd/MM/yyyy'}}</span>
+	<img *ngIf="course.topRated" src="./assets/icon/star.png" width="16" height="16"/>
 	{{course.description}}
 
   </div>
