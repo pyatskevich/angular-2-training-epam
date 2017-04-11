@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { CourseService } from './course.service';
+import { LoaderBlockService } from './loaderBlock.service';
 
 @Component({
 	selector: 'courses-container',
 	templateUrl: './courses.component.html',
 	styleUrls: ['./courses.component.css'],
-	providers: [CourseService],
-	changeDetection: ChangeDetectionStrategy.OnPush
+	providers: [CourseService, LoaderBlockService],
+//	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CoursesComponent implements OnInit {
-	constructor(private courseService:CourseService) {
+	header: string = 'Courses';
+	courses;
+
+	constructor(private courseService:CourseService,
+	private loaderBlockService:LoaderBlockService) {
 
 	}
-	header = 'Courses';
-	length = 0;
-	courses;
 
 	getCourses():void {
 		this.courseService.getCourses().then(courses => {
 			this.courses = courses;
-			this.length = this.courses.length;
-			console.log(this.length);
 		});
 	}
 
@@ -48,9 +48,11 @@ export class CoursesComponent implements OnInit {
 	}*/
 
 	removeItem(course): void {
+		this.loaderBlockService.showLoader();
 		this.courseService.deleteCourse(course).then(courses => {
-			this.courses = courses
+			this.courses = courses;
 			this.length = this.courses.length;
+			this.loaderBlockService.hideLoader();
 		});
 	}
 

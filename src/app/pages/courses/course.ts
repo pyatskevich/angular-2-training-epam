@@ -1,7 +1,7 @@
 export class Course {
   date: String;
   title: String;
-  time: String;
+  time: Number;
   description: String;
   id: Number;
   topRated: Boolean;

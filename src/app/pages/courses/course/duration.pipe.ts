@@ -5,7 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 
 export class DurationPipe implements PipeTransform {
-	transform(time: string) {
+	transform(time: number) {
 
 		if (time < 60) {
 			return `${time} min`

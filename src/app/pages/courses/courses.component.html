@@ -1,9 +1,10 @@
 <span>{{header}}</span>
 <search (done)="search($event)"></search>
 <add-course (done)="addCourse($event)"></add-course>
-<div class="show" *ngIf="length==0">
+<div class="show" *ngIf="courses?.length==0">
 	<p>No data. Add new course.</p>
 </div>
 <div class="courses-list" *ngFor="let course of courses | orderBy: time">
 	<course-item [course]="course" (done)="removeItem($event)"></course-item>
 </div>
+<!-- <loader-spinner></loader-spinner> -->

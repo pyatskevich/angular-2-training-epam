@@ -2,7 +2,7 @@ import { Course } from './course';
 export const COURSES: Course[] = [
 	{
 		title: 'course 1',
-		time: '90',
+		time: 90,
 		date: '2017-03-13',
 		description: 'Some description',
 		id: 1,
@@ -10,7 +10,7 @@ export const COURSES: Course[] = [
 	},
 	{
 		title: 'course 2',
-		time: '87',
+		time: 87,
 		date: '2017-03-05',
 		description: 'Some description',
 		id: 2,
@@ -18,7 +18,7 @@ export const COURSES: Course[] = [
 	},
 	{
 		title: 'course 3',
-		time: '80',
+		time: 80,
 		date: '2017-03-13',
 		description: 'Some description',
 		id: 3,
@@ -26,7 +26,7 @@ export const COURSES: Course[] = [
 	},
 	{
 		title: 'course 4',
-		time: '127',
+		time: 127,
 		date: '2017-05-13',
 		description: 'Some description',
 		id: 4,
