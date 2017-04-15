@@ -12,11 +12,7 @@ import { LoaderBlockService } from './loaderBlock.service';
 })
 export class CoursesComponent implements OnInit {
 	header: string = 'Courses';
-	courses: Observable<>;
-    private data: Observable<Array<number>>;
-    private values: Array<number> = [];
-    private anyErrors: boolean;
-    private finished: boolean;
+
 
 	constructor(private courseService:CourseService,
         private loaderBlockService:LoaderBlockService) {
@@ -31,15 +27,6 @@ export class CoursesComponent implements OnInit {
 
 	ngOnInit(): void {
         this.getCourses();
-	}
-
-	addCourse(course):void {
-		if (course.title && course.description) {
-			this.courseService.addCourse(course).subscribe(courses => {
-                console.log('courses', courses);
-    			this.courses = courses;
-    		});
-		}
 	}
 
 	getCourse(title): void {
