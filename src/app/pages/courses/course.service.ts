@@ -6,20 +6,15 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CourseService {
-    courses: Observable<Course[]>;
+    courses: Course[];
 	constructor() {
 		this.courses = COURSES;
 	}
     getCourses(): Observable<Course[]> {
         return new Observable(observer => observer.next(this.courses));
 	}
-    getCourseData() {
-        const dataInMiliseconds = new Date();
-        return dataInMiliseconds.toISOString().slice(0,10);
-    }
+
 	addCourse(course): Observable<Course[]> {
-		course.time = 90;
-		course.date = this.getCourseData();
 		course.id = this.courses.length + 1;
         course.topRated = false;
 		this.courses.push({...course});

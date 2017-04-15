@@ -10,13 +10,13 @@ import {Course} from '../course';
 export class AddComponent {
 	@Output() done = new EventEmitter();
 	newCourse: Course = new Course();
-	constructor() {
-
-	}
-
-	saveCourse() {
-		this.done.emit(this.newCourse);
-		this.newCourse = new Course();
+	constructor() {}
+	addCourse():void {
+		if (this.newCourse.title && this.newCourse.description) {
+			this.courseService.addCourse(this.newCourse).subscribe(courses => {
+    			this.courses = courses;
+    		});
+		}
 	}
 
 }
