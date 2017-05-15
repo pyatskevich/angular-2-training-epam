@@ -1,4 +1,4 @@
-import { Course } from './course';
+import { Course } from '../classes/course';
 export const COURSES: Course[] = [
 	{
 		title: 'course 1',

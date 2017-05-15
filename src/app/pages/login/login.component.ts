@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
-import { AuthService } from './auth.service';
-
+import { AuthService } from '../../core/services/authService';
 @Component({
 	selector: 'app',
 	templateUrl: './login.component.html',
@@ -8,7 +7,7 @@ import { AuthService } from './auth.service';
 		providers: [AuthService]
 })
 export class LoginComponent {
-	constructor(private authService:AuthService) {
+	constructor(private authService: AuthService) {
 
 	}
 	doLogin(data): void {

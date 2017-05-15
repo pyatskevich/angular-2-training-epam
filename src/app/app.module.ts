@@ -30,14 +30,19 @@ import { HeaderModule, FooterModule } from './core/components';
 import { CoursesModule } from './pages/courses';
 import { LoginModule } from './pages/login';
 import { AddModule } from './pages/courses/add';
-import {MaterialModule} from '@angular/material';
+import { MaterialModule } from '@angular/material';
+import { NotFoundModule } from './pages/notFound';
 
 // Services
-// import { CourseService } from './core/services/courseService';
+ import { CourseService } from './core/services/courseService';
+ import { SearchService } from './core/services/searchService';
+ import { AuthService } from './core/services/authService';
 
 // Application wide providers
 const APP_PROVIDERS = [
-	// CourseService
+	 CourseService,
+	 SearchService,
+	AuthService
 ];
 
 /**
@@ -56,13 +61,15 @@ const APP_PROVIDERS = [
 		HeaderModule,
 		FooterModule,
 		CoursesModule,
+		NotFoundModule,
 		MaterialModule,
 		LoginModule,
 		AddModule
 	],
 	providers: [ // expose our Services and Providers into Angular's dependency injection
-		ENV_PROVIDERS,
-		APP_PROVIDERS
+		...ENV_PROVIDERS,
+		...APP_PROVIDERS,
+
 	],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

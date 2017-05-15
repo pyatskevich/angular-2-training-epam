@@ -10,8 +10,7 @@
   </div>
   <div class="media-right">
 	  <div class="btn-group" role="group" aria-label="...">
-
-	  <button type="button" class="btn btn-default" (click)="editCourse()">Edit</button>
+	  <button [routerLink]="['./', course.id]" type="button" class="btn btn-default" >Edit</button>
   	  <button type="button" class="btn btn-default" (click)="deleteCourse()">Delete</button>
 
   </div>
