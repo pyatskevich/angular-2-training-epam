@@ -10,6 +10,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switch';
 import { Course } from '../../core/classes/course';
+//import { Store } from '@ngrx/store';
+//import { ADD, UPDATE, DELETE, GET} from './course.reducer';
 
 @Component({
 	selector: 'courses-container',
@@ -23,7 +25,7 @@ export class CoursesComponent implements OnInit {
 	public courses: Course[];
 
 	constructor(private courseService: CourseService,
-				private searchService: SearchService) {
+				private searchService: SearchService,) {
 		this.searchBar = new FormControl('', []);
 	}
 
